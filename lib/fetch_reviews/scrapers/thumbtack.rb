@@ -1,7 +1,7 @@
 module FetchReviews
-  module Reviews
+  module Scrapers
     class Thumbtack
-      def self.fetch
+      def self.run
       end
     end
   end

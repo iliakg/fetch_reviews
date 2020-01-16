@@ -1,7 +1,7 @@
 module FetchReviews
   module Scrapers
     class Yelp
-      def initialize
+      def self.run
       end
     end
   end

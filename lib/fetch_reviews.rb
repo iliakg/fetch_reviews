@@ -1,5 +1,13 @@
-require "fetch_reviews/version"
-require "fetch_reviews/configuration"
+require 'httparty'
+require 'nokogiri'
+
+require 'fetch_reviews/version'
+require 'fetch_reviews/configuration'
+require 'fetch_reviews/review'
+
+require 'fetch_reviews/scrapers/yelp'
+require 'fetch_reviews/scrapers/bbb'
+require 'fetch_reviews/scrapers/thumbtack'
 
 module FetchReviews
   class << self
@@ -18,15 +26,15 @@ module FetchReviews
     end
 
     def yelp
-      FetchReviews::Reviews::Yelp.fetch
+      FetchReviews::Scrapers::Yelp.run
     end
 
     def bbb
-      FetchReviews::Reviews::Bbb.fetch
+      FetchReviews::Scrapers::Bbb.run
     end
 
     def thumbtack
-      FetchReviews::Reviews::Thumbtack.fetch
+      FetchReviews::Scrapers::Thumbtack.run
     end
   end
 end
